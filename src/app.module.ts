@@ -24,4 +24,4 @@ import { GameEntity } from './games/infrastructure/persistence/entities/game.ent
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}

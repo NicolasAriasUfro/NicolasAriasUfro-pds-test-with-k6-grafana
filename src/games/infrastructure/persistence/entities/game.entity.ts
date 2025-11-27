@@ -2,21 +2,21 @@ import { Entity, Column, PrimaryColumn } from 'typeorm';
 
 @Entity('games')
 export class GameEntity {
-    @PrimaryColumn('uuid')
-    id: string;
+  @PrimaryColumn('uuid')
+  id: string;
 
-    @Column()
-    name: string;
+  @Column()
+  name: string;
 
-    @Column()
-    genre: string;
+  @Column()
+  genre: string;
 
-    @Column()
-    platform: string;
+  @Column()
+  platform: string;
 
-    @Column()
-    releaseDate: Date;
+  @Column()
+  releaseDate: Date;
 
-    @Column('decimal')
-    price: number;
+  @Column('decimal')
+  price: number;
 }

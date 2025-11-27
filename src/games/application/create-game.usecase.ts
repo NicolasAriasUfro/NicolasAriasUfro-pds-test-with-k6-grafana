@@ -1,24 +1,19 @@
 import { Game } from '../domain/game.model';
+import { CreateGameDto } from './dto/create-game.dto';
 import { GameRepository } from '../domain/game.repository';
 
 export class CreateGameUseCase {
-    constructor(private readonly gameRepository: GameRepository) { }
+  constructor(private readonly gameRepository: GameRepository) { }
 
-    async execute(
-        name: string,
-        genre: string,
-        platform: string,
-        releaseDate: Date,
-        price: number,
-    ): Promise<Game> {
-        const game = new Game(
-            crypto.randomUUID(),
-            name,
-            genre,
-            platform,
-            releaseDate,
-            price,
-        );
-        return this.gameRepository.create(game);
-    }
+  async execute(createGameDto: CreateGameDto): Promise<Game> {
+    const game = new Game(
+      crypto.randomUUID(),
+      createGameDto.name,
+      createGameDto.genre,
+      createGameDto.platform,
+      createGameDto.releaseDate,
+      createGameDto.price,
+    );
+    return this.gameRepository.create(game);
+  }
 }

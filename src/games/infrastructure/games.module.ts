@@ -10,38 +10,38 @@ import { UpdateGameUseCase } from '../application/update-game.usecase';
 import { DeleteGameUseCase } from '../application/delete-game.usecase';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([GameEntity])],
-    controllers: [GamesController],
-    providers: [
-        {
-            provide: 'GameRepository',
-            useClass: TypeOrmGameRepository,
-        },
-        {
-            provide: 'CreateGameUseCase',
-            useFactory: (repo) => new CreateGameUseCase(repo),
-            inject: ['GameRepository'],
-        },
-        {
-            provide: 'FindAllGamesUseCase',
-            useFactory: (repo) => new FindAllGamesUseCase(repo),
-            inject: ['GameRepository'],
-        },
-        {
-            provide: 'FindGameByIdUseCase',
-            useFactory: (repo) => new FindGameByIdUseCase(repo),
-            inject: ['GameRepository'],
-        },
-        {
-            provide: 'UpdateGameUseCase',
-            useFactory: (repo) => new UpdateGameUseCase(repo),
-            inject: ['GameRepository'],
-        },
-        {
-            provide: 'DeleteGameUseCase',
-            useFactory: (repo) => new DeleteGameUseCase(repo),
-            inject: ['GameRepository'],
-        },
-    ],
+  imports: [TypeOrmModule.forFeature([GameEntity])],
+  controllers: [GamesController],
+  providers: [
+    {
+      provide: 'GameRepository',
+      useClass: TypeOrmGameRepository,
+    },
+    {
+      provide: 'CreateGameUseCase',
+      useFactory: (repo) => new CreateGameUseCase(repo),
+      inject: ['GameRepository'],
+    },
+    {
+      provide: 'FindAllGamesUseCase',
+      useFactory: (repo) => new FindAllGamesUseCase(repo),
+      inject: ['GameRepository'],
+    },
+    {
+      provide: 'FindGameByIdUseCase',
+      useFactory: (repo) => new FindGameByIdUseCase(repo),
+      inject: ['GameRepository'],
+    },
+    {
+      provide: 'UpdateGameUseCase',
+      useFactory: (repo) => new UpdateGameUseCase(repo),
+      inject: ['GameRepository'],
+    },
+    {
+      provide: 'DeleteGameUseCase',
+      useFactory: (repo) => new DeleteGameUseCase(repo),
+      inject: ['GameRepository'],
+    },
+  ],
 })
-export class GamesModule { }
+export class GamesModule {}
