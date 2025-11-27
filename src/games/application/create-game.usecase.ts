@@ -3,7 +3,7 @@ import { CreateGameDto } from './dto/create-game.dto';
 import { GameRepository } from '../domain/game.repository';
 
 export class CreateGameUseCase {
-  constructor(private readonly gameRepository: GameRepository) { }
+  constructor(private readonly gameRepository: GameRepository) {}
 
   async execute(createGameDto: CreateGameDto): Promise<Game> {
     const game = new Game(

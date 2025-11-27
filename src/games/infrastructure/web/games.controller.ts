@@ -31,7 +31,7 @@ export class GamesController {
     private readonly updateGameUseCase: UpdateGameUseCase,
     @Inject('DeleteGameUseCase')
     private readonly deleteGameUseCase: DeleteGameUseCase,
-  ) { }
+  ) {}
 
   @Post()
   async create(@Body() createGameDto: CreateGameDto): Promise<Game> {

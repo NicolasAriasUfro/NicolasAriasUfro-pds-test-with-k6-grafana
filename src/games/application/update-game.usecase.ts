@@ -3,7 +3,7 @@ import { UpdateGameDto } from './dto/update-game.dto';
 import { GameRepository } from '../domain/game.repository';
 
 export class UpdateGameUseCase {
-  constructor(private readonly gameRepository: GameRepository) { }
+  constructor(private readonly gameRepository: GameRepository) {}
 
   async execute(id: string, updateGameDto: UpdateGameDto): Promise<void> {
     const existingGame = await this.gameRepository.findById(id);
