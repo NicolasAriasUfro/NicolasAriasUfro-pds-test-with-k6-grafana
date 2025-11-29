@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 15s   # cada cuánto Prometheus consulta las métricas
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'nestjs-api'
+    metrics_path: '/metrics'          # ruta donde tu API expone métricas
+    static_configs:
+      - targets: ['localhost:3000']

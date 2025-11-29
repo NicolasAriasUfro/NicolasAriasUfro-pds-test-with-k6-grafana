@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GamesModule } from './games/infrastructure/games.module';
 import { GameEntity } from './games/infrastructure/persistence/entities/game.entity';
+import { PrometheusModule } from '@willsoto/nestjs-prometheus';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { GameEntity } from './games/infrastructure/persistence/entities/game.ent
       synchronize: true, // Auto-create tables (dev only)
     }),
     GamesModule,
+    PrometheusModule.register()
   ],
   controllers: [AppController],
   providers: [AppService],
