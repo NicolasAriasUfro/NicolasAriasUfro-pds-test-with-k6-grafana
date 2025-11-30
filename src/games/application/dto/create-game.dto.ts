@@ -4,7 +4,6 @@ import {
   IsDate,
   IsNumber,
   Min,
-  IsUUID,
 } from 'class-validator';
 import { Type } from 'class-transformer';
 

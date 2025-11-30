@@ -18,7 +18,7 @@ import { PrometheusModule } from '@willsoto/nestjs-prometheus';
       password: 'password',
       database: 'games_db',
       entities: [GameEntity],
-      synchronize: true, // Auto-create tables (dev only)
+      synchronize: true,
     }),
     GamesModule,
     PrometheusModule.register()
